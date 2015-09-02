@@ -6,7 +6,6 @@ MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 # Prepare rootfs for image-builder
 RUN /usr/local/sbin/builder-enter
 
-
 # Install packages
 RUN apt-get -q update \
  && apt-get -y -q upgrade \

@@ -5,6 +5,7 @@ VERSION_ALIASES =
 TITLE =			OpenVPN
 DESCRIPTION =		OpenVPN
 SOURCE_URL =		https://github.com/scaleway/image-app-openvpn
+VENDOR_URL =		https://openvpn.net
 
 IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	stable

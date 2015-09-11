@@ -4,11 +4,11 @@ VERSION =		latest
 VERSION_ALIASES =	
 TITLE =			OpenVPN
 DESCRIPTION =		OpenVPN
-SOURCE_URL =		https://github.com/scaleway/image-app-openvpn
+SOURCE_URL =		https://github.com/scaleway/image-app-vpn
 
 IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	stable
-IMAGE_NAME =		OpenVPN
+IMAGE_NAME =		VPN (OpenVPN)
 
 
 ## Image tools  (https://github.com/scaleway/image-tools)

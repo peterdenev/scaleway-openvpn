@@ -1,5 +1,5 @@
-## -*- docker-image-name: "armbuild/scw-app-openvpn:latest" -*-
-FROM armbuild/scw-distrib-ubuntu:trusty
+## -*- docker-image-name: "scaleway/openvpn:latest" -*-
+FROM scaleway/ubuntu:trusty
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
 
 

@@ -1,5 +1,4 @@
-DOCKER_NAMESPACE =	armbuild/
-NAME =			scw-app-openvpn
+NAME =			openvpn
 VERSION =		latest
 VERSION_ALIASES =	
 TITLE =			OpenVPN

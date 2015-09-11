@@ -1,10 +1,9 @@
-DOCKER_NAMESPACE =	armbuild/
-NAME =			scw-app-openvpn
+NAME =			openvpn
 VERSION =		latest
 VERSION_ALIASES =	
 TITLE =			OpenVPN
 DESCRIPTION =		OpenVPN
-SOURCE_URL =		https://github.com/scaleway/image-app-openvpn
+SOURCE_URL =		https://github.com/scaleway-community/scaleway-openvpn
 
 IMAGE_VOLUME_SIZE =	50G
 IMAGE_BOOTSCRIPT =	stable

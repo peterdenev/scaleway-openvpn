@@ -1,37 +1,20 @@
-# Official OpenVPN image on Scaleway
+# OpenVPN image on Scaleway
 
-[![Travis](https://img.shields.io/travis/scaleway-community/scaleway-openvpn.svg)](https://travis-ci.org/scaleway-community/scaleway-openvpn)
+[![Build Status](https://travis-ci.org/scaleway-community/scaleway-openvpn.svg?branch=master)](https://travis-ci.org/scaleway-community/scaleway-openvpn)
 [![Scaleway ImageHub](https://img.shields.io/badge/ImageHub-view-ff69b4.svg)](https://hub.scaleway.com/openvpn.html)
-[![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=coming-soon)
+[![Run on Scaleway](https://img.shields.io/badge/Scaleway-run-69b4ff.svg)](https://cloud.scaleway.com/#/servers/new?image=b6f4edc8-21e6-4aa2-8f52-1030cf6d4dd8)
 
-**[Getting started with the OpenVPN instant app](https://www.scaleway.com/docs/how-to-use-the-openvpn-instant-apps/)**
+Launch your OpenVPN app on Scaleway servers in minutes.
 
-Scripts to build the official OpenVPN image on Scaleway
+<img src="https://store.silvenga.com/external/openvpntech_logo1.png" width="400px" />
 
-This image is built using [Image Tools](https://github.com/scaleway/image-tools) and depends on the official [Ubuntu](https://github.com/scaleway/image-ubuntu) image.
+## How to hack
 
-<img src="http://upload.wikimedia.org/wikipedia/commons/8/88/Ovpntech_logo-s_REVISED.png" width="350px" />
-
-
----
-
-**This image is meant to be used on a C1 server.**
+**This image is meant to be used on a Scaleway server.**
 
 We use the Docker's building system and convert it at the end to a disk image that will boot on real servers without Docker. Note that the image is still runnable as a Docker container for debug or for inheritance.
 
-[More info](https://github.com/scaleway/image-tools)
-
-
----
-
-## Install
-
-Build and write the image to /dev/nbd1 (see [documentation](https://www.scaleway.com/docs/create_an_image_with_docker))
-
-    $ make install
-
-Full list of commands available at: [scaleway/image-tools](https://github.com/scaleway/image-tools/#commands)
-
+[More info](https://github.com/scaleway/image-builder)
 
 ---
 

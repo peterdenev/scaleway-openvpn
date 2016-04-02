@@ -23,6 +23,7 @@ RUN apt-get -q update        \
 	iptables             \
 	iptables-persistent  \
 	openvpn              \
+	stunnel4             \
 	uuid                 \
  && apt-get clean
 

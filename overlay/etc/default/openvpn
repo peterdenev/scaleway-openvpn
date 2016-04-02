@@ -88,3 +88,6 @@ chmod 600 /etc/openvpn/key.pem
     openssl req -new -key /etc/openvpn/key.pem -out /etc/openvpn/csr.pem -subj /CN=OpenVPN/
 [ -f /etc/openvpn/cert.pem ] || \
     openssl x509 -req -in /etc/openvpn/csr.pem -out /etc/openvpn/cert.pem -signkey /etc/openvpn/key.pem -days 24855
+[ -f /etc/stunnel/stunnel.pem ] || \
+    cat /etc/openvpn/key.pem /etc/openvpn/cert.pem >> /etc/stunnel/stunnel.pem && \
+    sed -i s/ENABLED=0/ENABLED=1/g /etc/default/stunnel4

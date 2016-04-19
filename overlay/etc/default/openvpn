@@ -69,6 +69,9 @@ EOF
 	(ps aux | grep SimpleHTTP | grep -v grep | awk '{print $2}' | xargs kill -9) >/dev/null 2>/dev/null
 	sleep .1
 	(cd $BASEDIR && python -m SimpleHTTPServer 8000 &) >/dev/null 2>/dev/null
+	scw-sync-kernel-modules
+	depmod -a
+	service iptables-persistent restart
 	service openvpn stop
 	service openvpn start
 }

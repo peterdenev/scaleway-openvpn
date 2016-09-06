@@ -1,11 +1,11 @@
 ## -*- docker-image-name: "scaleway/openvpn:latest" -*-
-FROM scaleway/ubuntu:amd64-trusty
+FROM scaleway/ubuntu:amd64-xenial
 # following 'FROM' lines are used dynamically thanks do the image-builder
 # which dynamically update the Dockerfile if needed.
-#FROM scaleway/ubuntu:armhf-trusty       # arch=armv7l
-#FROM scaleway/ubuntu:arm64-trusty       # arch=arm64
-#FROM scaleway/ubuntu:i386-trusty        # arch=i386
-#FROM scaleway/ubuntu:mips-trusty        # arch=mips
+#FROM scaleway/ubuntu:armhf-xenial       # arch=armv7l
+#FROM scaleway/ubuntu:arm64-xenial       # arch=arm64
+#FROM scaleway/ubuntu:i386-xenial        # arch=i386
+#FROM scaleway/ubuntu:mips-xenial        # arch=mips
 
 
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
@@ -19,18 +19,15 @@ RUN /usr/local/sbin/scw-builder-enter
 RUN apt-get -q update        \
  && apt-get -y -q upgrade    \
  && apt-get install -y -q    \
+ 	easy-rsa             \
 	curl                 \
 	iptables             \
-	iptables-persistent  \
 	openvpn              \
-	stunnel4             \
 	uuid                 \
  && apt-get clean
 
-
 # Patch rootfs
 COPY ./overlay/ /
-
 
 # Clean rootfs from image-builder
 RUN /usr/local/sbin/scw-builder-leave

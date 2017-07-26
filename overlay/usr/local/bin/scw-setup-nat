@@ -9,5 +9,5 @@ snat_wrap () {
     "$cmd" -t nat -I POSTROUTING -s "$1" -o eth0 -j SNAT --to "$2"
 }
 
-snat_wrap iptables "${ipv4_prefix}.0.0/16" "$(meta PRIVATE_IP)"
-! has_ipv6 || snat_wrap ip6tables "${ipv6_prefix}::0/48" "$(meta IPV6_ADDRESS)"
+snat_wrap iptables "${ipv4_net}" "$(meta PRIVATE_IP)"
+! has_ipv6 || snat_wrap ip6tables "${ipv6_net}" "$(meta IPV6_ADDRESS)"

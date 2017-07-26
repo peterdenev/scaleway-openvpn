@@ -20,3 +20,6 @@ export openvpn_tls_cipher=''
 export openvpn_cipher='AES-256-CBC'
 export openvpn_tls_version_min='1.2'
 export openvpn_auth='SHA256'
+
+export ipv4_net="${ipv4_prefix}.0.0/16"
+export ipv6_net="${ipv6_prefix}::0/48"

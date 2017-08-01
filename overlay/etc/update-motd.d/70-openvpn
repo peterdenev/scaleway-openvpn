@@ -1,18 +1,17 @@
 #!/bin/bash
 
-if [ ! -f /root/client.ovpn ]
-then
+set -e
+
+. /etc/openvpn/scw-vars.sh
+
+if [ ! -f "${easyrsa}"/done ]; then
 	cat << EOF
-
-
 It's the first boot, we are crafting your keys,
 this is going to take a long time... ~30m since the boot
 
-You can display the progressing or the path to your config file with:
-	-- oc-check-vpn
-
+Run this command to be notified when your service is ready:
+        $ scw-ovpn status
 EOF
 else
-	oc-check-vpn
+    echo "Did you know you can use scw-ovpn to manage your openvpn server ?"
 fi
-

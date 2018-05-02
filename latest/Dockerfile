@@ -1,11 +1,7 @@
 ## -*- docker-image-name: "scaleway/openvpn:latest" -*-
-FROM scaleway/ubuntu:amd64-xenial
-# following 'FROM' lines are used dynamically thanks do the image-builder
-# which dynamically update the Dockerfile if needed.
-#FROM scaleway/ubuntu:armhf-xenial       # arch=armv7l
-#FROM scaleway/ubuntu:arm64-xenial       # arch=arm64
-#FROM scaleway/ubuntu:i386-xenial        # arch=i386
-#FROM scaleway/ubuntu:mips-xenial        # arch=mips
+ARG SCW_ARCH
+
+FROM scaleway/ubuntu:${SCW_ARCH}-xenial
 
 
 MAINTAINER Scaleway <opensource@scaleway.com> (@scaleway)
@@ -17,7 +13,6 @@ RUN /usr/local/sbin/scw-builder-enter
 
 # Install packages
 RUN apt-get -q update        \
- && apt-get -y -q upgrade    \
  && apt-get install -y -q    \
  	easy-rsa             \
 	curl                 \

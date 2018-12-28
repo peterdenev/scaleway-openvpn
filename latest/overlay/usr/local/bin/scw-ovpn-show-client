@@ -48,7 +48,8 @@ cat <<EOF
 client
 nobind
 dev tun
-redirect-gateway def1
+# redirect-gateway def1 # uncomment this to forward all traffic to vpn server
+comp-lzo
 <key>
 ${key}
 </key>

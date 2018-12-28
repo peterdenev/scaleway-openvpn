@@ -35,7 +35,7 @@ topology subnet
 verb 3
 
 # CERTS
-duplicate-cn
+# duplicate-cn # allow one ovpn file for multi connection use
 key  ${easyrsa_keys}/${server_name}.key
 cert ${easyrsa_keys}/${server_name}.crt
 ca   ${easyrsa_keys}/ca.crt
@@ -75,11 +75,22 @@ ipv6_specific () {
 server-ipv6 ${ipv6_subnet}
 push "route-ipv6 ${ipv6_subnet}"
 push "route-ipv6 2000::/3"
-push "redirect-gateway ipv6"
+# push "redirect-gateway ipv6" # full traffic forward to vpn server
 EOF
+}
+
+fix_ips () {
+  echo "ifconfig-pool-persist ipp.txt"
+  echo "client-config-dir ccd"
+}
+
+compression () {
+  echo "comp-lzo"
 }
 
 
 common
 ipv4_specific
 ipv6_specific
+fix_ips
+compression
